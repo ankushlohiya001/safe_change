@@ -18,11 +18,16 @@ F -- File not deleted --> H(Revert the change)
 ```
 
 ### Usage:
-```Usage: safe_change [OPTION]... <command> <file_path>
+```text
+Usage: safe_change [OPTION]... <command> <file_path>
 CLI app to safely execute unsafe code (which might cause unaccessibility), by reverting changes if no response recieved.
-
 Arguments
-	-t, --timer <seconds>			Specify timer after to revert changes.```
-```safe_change <command> # default timer 30 secs
+	-t, --timer <seconds>      Specify timer after to revert changes.
 ```
-```safe_change <command> -t 10 # specifying 10 secs timer```
+
+```sh
+safe_change <command> # default timer 30 secs
+```
+```sh
+safe_change <command> -t 10 # specifying 10 secs timer
+```

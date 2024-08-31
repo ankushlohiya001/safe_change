@@ -15,11 +15,12 @@ graph
 A(Safe Execute) --> B(Backup file) --> C(Execute specified Command) --> D(Create lockfile) --> E(initiate Timer) -- User can delete file withing this period --> F{Time Over}
 F -- File deleted --> G(Nothing happen)
 F -- File not deleted --> H(Revert the change)
+H --{If command Specified}--> I(Post revert command)
 ```
 
 ### Usage:
 ```text
-Usage: safe_change [OPTION]... <command> <file_path>
+Usage: safe_change [OPTION]... <command> <file_path> [post_revert_command]
 CLI app to safely execute unsafe code (which might cause unaccessibility), by reverting changes if no response recieved.
 Arguments
 	-t, --timer <seconds>      Specify timer after to revert changes.

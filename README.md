@@ -19,16 +19,18 @@ H --{If command Specified}--> I(Post revert command)
 ```
 
 ### Usage:
-```text
-Usage: safe_change [OPTION]... <command> <file_path> [post_revert_command]
-CLI app to safely execute unsafe code (which might cause unaccessibility), by reverting changes if no response recieved.
-Arguments
-	-t, --timer <seconds>      Specify timer after to revert changes.
-```
+```sh
+> safe_change --help
+CLI app to safely execute unsafe code (which might cause unaccessibility), by reverting changes if no response recieved
 
-```sh
-safe_change <command> # default timer 30 secs
-```
-```sh
-safe_change <command> -t 10 # specifying 10 secs timer
+Usage: safe_change [OPTIONS] <COMMAND> <FILE_PATH> [REVERT_COMMAND]
+
+Arguments:
+  <COMMAND>         Command to execute safely
+  <FILE_PATH>       File which encounter changes (ie. to backup)
+  [REVERT_COMMAND]  Command to execute after revert [default: ]
+
+Options:
+  -t, --timer <TIMER>  timer after to revert changes [default: 30]
+  -h, --help           Print help
 ```
